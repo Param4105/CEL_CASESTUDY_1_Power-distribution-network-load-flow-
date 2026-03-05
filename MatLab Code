@@ -1,0 +1,41 @@
+clc;
+clear;
+
+% Resistances (Ohms)
+R1 = 6000;
+R2 = 2000;
+R3 = 5000;
+
+% Known voltages
+VB = 12;     % Node B voltage (V)
+V48 = 48;    % Right side node voltage (V)
+
+% Current source
+I1 = 0.001;  % 1 mA
+
+% Coefficient matrix (from nodal equation)
+A = 7;
+
+% RHS value
+B = 166;
+
+% Solve for VA using inverse matrix method
+VA = inv(A)*B;
+
+% Branch currents
+
+IR1 = VB/R1;           % through R1
+IR2 = (VA - VB)/R2;    % through R2
+IR3 = (VA - V48)/R3;   % through R3
+
+% Display results
+fprintf('Node Voltages:\n');
+fprintf('VA = %.2f V\n',VA);
+fprintf('VB = %.2f V\n\n',VB);
+
+fprintf('Branch Currents:\n');
+fprintf('IR1 = %.4f A (%.2f mA)\n',IR1,IR1*1000);
+fprintf('IR2 = %.4f A (%.2f mA)\n',IR2,IR2*1000);
+fprintf('IR3 = %.4f A (%.2f mA)\n',IR3,IR3*1000);
+fprintf('Current Source I1 = %.4f A (%.2f mA)\n',I1,I1*1000);
+
