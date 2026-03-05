@@ -1,0 +1,9 @@
+Node Voltages:
+VA = 23.71 V
+VB = 12.00 V
+
+Branch Currents:
+IR1 = 0.0020 A (2.00 mA)
+IR2 = 0.0059 A (5.86 mA)
+IR3 = -0.0049 A (-4.86 mA)
+Current Source I1 = 0.0010 A (1.00 mA) 
